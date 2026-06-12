@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Gradients for the isometric box -->
+    <linearGradient id="topGrad" x1="132" y1="185" x2="380" y2="185" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d1e0d0" />
+      <stop offset="100%" stop-color="#a5bda3" />
+    </linearGradient>
+    <linearGradient id="leftGrad" x1="132" y1="290" x2="256" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b5239" />
+      <stop offset="100%" stop-color="#2b3e2a" />
+    </linearGradient>
+    <linearGradient id="rightGrad" x1="256" y1="290" x2="380" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2b3e2a" />
+      <stop offset="100%" stop-color="#141d14" />
+    </linearGradient>
+
+    <!-- Gradient for the flow ring -->
+    <linearGradient id="ringGrad" x1="80" y1="256" x2="432" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2b3e2a" />
+      <stop offset="50%" stop-color="#a5bda3" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+    
+    <!-- Shadow filter for 3D effect -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Flow Ring wrapping the box -->
+  <path d="M 120 256 A 136 136 0 1 1 392 256" stroke="url(#ringGrad)" stroke-width="28" stroke-linecap="round" opacity="0.85" />
+  
+  <!-- Arrow head for the Flow Ring -->
+  <path d="M 374 240 L 392 270 L 410 240" fill="#ffffff" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" />
+
+  <!-- 3D Isometric Box Group with Shadow -->
+  <g filter="url(#dropShadow)">
+    <!-- Top Face -->
+    <path d="M 256 130 L 370 195 L 256 260 L 142 195 Z" fill="url(#topGrad)" />
+    
+    <!-- Left Face -->
+    <path d="M 142 195 L 142 320 L 256 385 L 256 260 Z" fill="url(#leftGrad)" />
+    
+    <!-- Right Face -->
+    <path d="M 256 260 L 256 385 L 370 320 L 370 195 Z" fill="url(#rightGrad)" />
+  </g>
+  
+  <!-- Inner core glowing dot (AI indicator) -->
+  <circle cx="256" cy="195" r="16" fill="#ffffff" opacity="0.9" />
+</svg>
