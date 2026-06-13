@@ -280,22 +280,24 @@ export const Orders: React.FC = () => {
                     </td>
 
                     {/* Actions */}
-                    <td className="p-4 text-right pr-6 space-x-2">
-                      <button
-                        onClick={() => openDetailsModal(o)}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-bold rounded-lg border border-[#e6eae2] dark:border-[#2b3a2a] hover:bg-[#f3f6f1] dark:hover:bg-[#253224] text-[#2b3e2a] dark:text-[#a5bda3] transition-colors cursor-pointer"
-                      >
-                        <Eye className="w-3 h-3" />
-                        Details
-                      </button>
-                      {o.status !== 'Cancelled' && (
+                    <td className="p-4 pr-6">
+                      <div className="flex items-center justify-end gap-2">
                         <button
-                          onClick={() => handleCancelOrder(o.id)}
-                          className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-bold text-rose-550 border border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/15 rounded-lg transition-colors cursor-pointer"
+                          onClick={() => openDetailsModal(o)}
+                          className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-bold rounded-lg border border-[#e6eae2] dark:border-[#2b3a2a] hover:bg-[#f3f6f1] dark:hover:bg-[#253224] text-[#2b3e2a] dark:text-[#a5bda3] transition-colors cursor-pointer"
                         >
-                          Cancel
+                          <Eye className="w-3 h-3" />
+                          Details
                         </button>
-                      )}
+                        {o.status !== 'Cancelled' && (
+                          <button
+                            onClick={() => handleCancelOrder(o.id)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 text-[10px] font-bold text-rose-550 border border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/15 rounded-lg transition-colors cursor-pointer"
+                          >
+                            Cancel
+                          </button>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))}
