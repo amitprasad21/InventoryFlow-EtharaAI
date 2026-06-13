@@ -12,7 +12,7 @@ else:
     load_dotenv()
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://postgres:postgres_password@localhost:5432/inventoryflow")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./inventoryflow.db")
     SECRET_KEY: str = os.getenv("SECRET_KEY", "supersecretjwtkeyforinventoryflowai123_change_in_prod")
     ALGORITHM: str = os.getenv("ALGORITHM", "HS256")
     ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
